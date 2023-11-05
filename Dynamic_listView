@@ -1,0 +1,39 @@
+// using in body:
+
+import 'package:flutter/material.dart';
+
+void main(){
+  runApp(Home());
+}
+
+class Home extends StatelessWidget {
+  Home({super.key});
+
+  List<String> products = ["Bed", "Sofa", "Chair"];
+  List<String> productDetails = ["King size bed", "King size sofa", "King size chair"];
+  List<int> price = [3000, 2500, 1860];
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: Container(
+          child: ListView.builder(
+            
+            //itemCount: 3,
+            itemCount: productDetails.length,
+            itemBuilder: (context, index){
+              //return Text(productDetails[index]);
+              return ListTile(
+                leading: CircleAvatar(child: Text(products[index][0]),),
+                title: Text(products[index]),
+                subtitle: Text(productDetails[index]),
+                trailing: Text(price[index].toString()),
+              );
+            },
+          ),
+        ),
+      ),
+    );
+  }
+}
