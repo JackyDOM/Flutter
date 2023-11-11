@@ -1,0 +1,28 @@
+ home: Scaffold(
+        appBar: AppBar(title: Text("Navigation Drawer"),),
+        drawer: Drawer(
+          child: ListView(
+            children: [
+              UserAccountsDrawerHeader(
+                accountEmail: Text("support@taimoorSikander.com"),
+                accountName: Text("Coding with Tea!"),
+                currentAccountPicture: CircleAvatar(foregroundImage: AssetImage("images/beach.jpg"),),
+                otherAccountsPictures: [
+                    CircleAvatar(foregroundImage: AssetImage("images/beach.jpg")),
+                    CircleAvatar(foregroundImage: AssetImage("images/beach.jpg")),
+                ],
+              ),
+              ListTile(leading: Icon(Icons.home), title: Text("Home"), onTap: (){},),
+              ListTile(leading: Icon(Icons.shopping_cart), title: Text("Shop"), onTap: (){},),
+              ListTile(leading: Icon(Icons.favorite), title: Text("Favorite"), onTap: (){},),
+              Padding(
+                padding: const EdgeInsets.all(14.0),
+                child: Text("Labels"),
+              ),
+              ListTile(leading: Icon(Icons.label), title: Text("Red"), onTap: (){},),
+              ListTile(leading: Icon(Icons.label), title: Text("Green"), onTap: (){},),
+              ListTile(leading: Icon(Icons.label), title: Text("Blue"), onTap: (){},),
+
+            ],
+          ),
+        ),
